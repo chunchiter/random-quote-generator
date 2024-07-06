@@ -8,7 +8,7 @@ const App = () =>{
     fetch("https://waifu-it.p.rapidapi.com/waifu?name=Asuna%20Yuuki&anime=Sword%20Art%20Online")
     .then((res) => res.json())
     .then((data) => {
-      let randomNum = Math.floor(Math.random() * data.legth);
+      let randomNum = Math.floor(Math.random() * data.length);
       setQuotes(data[randomNum]);
     });
   };
