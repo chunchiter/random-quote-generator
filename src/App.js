@@ -13,7 +13,7 @@ const App = () => {
         const randomQuote = data[randomIndex];
         setQuotes(randomQuote.text);
         setAuthor(randomQuote.author);
-      })
+      });
   };
 
   useEffect(() => {
@@ -26,27 +26,25 @@ const App = () => {
         <div className="btnContainer">
           <button onClick={getQuotes}>Get Quotes</button>
           <a 
-          href={`https://x.com/intent/tweet?=text=${quotes.text}`}
-          target='blank'
-          rel='noopener noreferrer'
-          className="btn">
-          Tweet
+            href={`https://x.com/intent/tweet?text=${quotes}`}
+            target='_blank'
+            rel='noopener noreferrer'
+            className="btn">
+            Tweet
           </a>
-
           <a 
-          href={`https://www.instagram.com`}
-          target='blank'
-          rel='noopener noreferrer'
-          className="btn">
-          Instagram
+            href={`https://www.instagram.com`}
+            target='_blank'
+            rel='noopener noreferrer'
+            className="btn">
+            Instagram
           </a>
-
           <a 
-         href={`https://www.threads.net/share?text=${quotes.text}`}
-          target='blank'
-          rel='noopener noreferrer'
-          className="btn">
-          Theards
+            href={`https://www.threads.net/share?text=${quotes}`}
+            target='_blank'
+            rel='noopener noreferrer'
+            className="btn">
+            Threads
           </a>
         </div>
         {quotes && (
