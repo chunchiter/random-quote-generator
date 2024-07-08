@@ -3,21 +3,22 @@ import './App.css';
 
 const App = () => {
   const [quotes, setQuotes] = useState('');
+  const [author, setAuthor] = useState('');
 
   const getQuotes = () => {
     fetch("https://type.fit/api/quotes")
       .then(response => response.json())
       .then(data => {
-
         const randomIndex = Math.floor(Math.random() * data.length);
-        const randomQuote = data[randomIndex].text;
-        setQuotes(randomQuote);
+        const randomQuote = data[randomIndex];
+        setQuotes(randomQuote.text);
+        setAuthor(randomQuote.author);
       })
   };
 
   useEffect(() => {
     getQuotes();
-  }, []); 
+  }, []);
 
   return (
     <div className="App">
@@ -31,6 +32,7 @@ const App = () => {
         {quotes && (
           <div className="quote">
             <p>{quotes}</p>
+            <p><strong>{author}</strong></p>
           </div>
         )}
       </div>
