@@ -25,9 +25,29 @@ const App = () => {
       <div className="quotes">
         <div className="btnContainer">
           <button onClick={getQuotes}>Get Quotes</button>
-          <a href="" className="btn">Tweet</a>
-          <a href="" className="btn">Instagram</a>
-          <a href="" className="btn">Threads</a>
+          <a 
+          href={`https://x.com/intent/tweet?=text=${quotes.text}`}
+          target='blank'
+          rel='noopener noreferrer'
+          className="btn">
+          Tweet
+          </a>
+
+          <a 
+          href={`https://www.instagram.com`}
+          target='blank'
+          rel='noopener noreferrer'
+          className="btn">
+          Instagram
+          </a>
+
+          <a 
+         href={`https://www.threads.net/share?text=${quotes.text}`}
+          target='blank'
+          rel='noopener noreferrer'
+          className="btn">
+          Theards
+          </a>
         </div>
         {quotes && (
           <div className="quote">
